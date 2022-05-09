@@ -51,12 +51,34 @@ public class AddressBook {
         System.out.println("Edit contact of First Name:");
         String firstName = scanner.next();
 
+        for(Contacts contact:contactsArrayList){
+
+            boolean isContactThere = false;
+            if(firstName.equals(contact.getFirstName())){
+                contact.editContact();
+                System.out.println("Contact edited successfully!");
+                isContactThere =false;
+                break;
+            }
+
+            if(isContactThere == true){
+                System.out.println("No record of contact with First Name "+firstName+" in the address book.");
+            }
+        }
+
+    }
+
+    public void deleteContact() {
+        System.out.println("Delete contact of First Name:");
+        String firstName = scanner.next();
+
         boolean isContactThere = false;
 
         for(Contacts contact:contactsArrayList){
             if(firstName.equals(contact.getFirstName())){
-                contact.editContact();
-                System.out.println("Contact edited successfully!");
+
+                contactsArrayList.remove(contact);
+                System.out.println("Contact deleted successfully!");
                 isContactThere =false;
                 break;
             }
