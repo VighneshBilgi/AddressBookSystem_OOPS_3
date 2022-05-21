@@ -5,6 +5,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AddressBook {
+    String addressBookName;
+    public String getAddressBookName() {
+        return addressBookName;
+    }
+
+    public void setAddressBookName(String addressBookName) {
+        this.addressBookName = addressBookName;
+    }
+
+
 
     static Scanner scanner = new Scanner(System.in);
 
